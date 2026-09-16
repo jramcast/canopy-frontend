@@ -46,8 +46,6 @@ spec:
               value: "{{ .Values.MLFLOW_PROMPT_VERSION | default "latest" }}"
             - name: MLFLOW_TRACKING_INSECURE_TLS
               value: "true"
-            - name: ENVIRONMENT
-              value: "{{ .Values.ENVIRONMENT | default "prod" }}"
             - name: OPENSHIFT_NAMESPACE
               valueFrom:
                 fieldRef:

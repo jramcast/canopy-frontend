@@ -51,11 +51,6 @@
       "description": "MLflow prompt version to fetch (alias or number)",
       "default": "latest"
     },
-    "ENVIRONMENT": {
-      "type": "string",
-      "description": "Cluster environment (test, prod)",
-      "default": "prod"
-    },
     "image": {
       "type": "object",
       "description": "Container image configuration",
