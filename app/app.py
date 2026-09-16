@@ -10,7 +10,7 @@ from prometheus_client import start_http_server, Counter, Histogram
 
 # Load environment variables
 BACKEND_ENDPOINT = os.getenv("BACKEND_ENDPOINT", "http://localhost:8000")
-OPENSHIFT_NAMESPACE = os.getenv("OPENSHIFT_NAMESPACE", "")
+OPENSHIFT_NAMESPACE = os.getenv("OPENSHIFT_NAMESPACE")
 
 @st.cache_resource
 def _init_metrics():
