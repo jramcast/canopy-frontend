@@ -5,6 +5,7 @@ BACKEND_ENDPOINT: ""
 MLFLOW_TRACKING_URI: "https://mlflow.redhat-ods-applications.svc.cluster.local:8443"
 MLFLOW_PROMPT_NAME: "summarization"
 MLFLOW_PROMPT_VERSION: "latest"
+ENVIRONMENT: "prod"
 image:
   name: "canopy-ui"
   tag: "simple-0.5"

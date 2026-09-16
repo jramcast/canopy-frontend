@@ -10,6 +10,8 @@ from prometheus_client import start_http_server, Counter, Histogram
 
 # Load environment variables
 BACKEND_ENDPOINT = os.getenv("BACKEND_ENDPOINT", "http://localhost:8000")
+ENVIRONMENT = os.getenv("ENVIRONMENT", "").lower()
+OPENSHIFT_NAMESPACE = os.getenv("OPENSHIFT_NAMESPACE", "").lower()
 
 @st.cache_resource
 def _init_metrics():
@@ -101,6 +103,13 @@ st.set_page_config(
 # Sidebar navigation
 logo_path = "logo.png"
 logo = Image.open(logo_path)
+
+if "test" in ENVIRONMENT or "test" in OPENSHIFT_NAMESPACE:
+    st.sidebar.warning("**ENVIROMENT**: Test 🚧")
+
+if "dev" in ENVIRONMENT or "experiment" in ENVIRONMENT or "user1-canopy" in  OPENSHIFT_NAMESPACE:
+    st.sidebar.warning("**ENVIRONMENT**: Experimentation 🧪")
+
 st.sidebar.image(logo, width='stretch')
 st.sidebar.title("Canopy 🌿")
 
