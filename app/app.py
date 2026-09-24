@@ -105,7 +105,7 @@ logo = Image.open(logo_path)
 
 # Display the current OpenShift project (injected) for easier navigation 
 if OPENSHIFT_NAMESPACE:
-    st.sidebar.info(f"**OpenShift Namespace**: `{OPENSHIFT_NAMESPACE}`")
+    st.sidebar.info(f"**Environment**: `{OPENSHIFT_NAMESPACE}`")
 
 st.sidebar.image(logo, width='stretch')
 st.sidebar.title("Canopy 🌿")
